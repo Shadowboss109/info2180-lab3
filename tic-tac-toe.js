@@ -19,20 +19,42 @@ function changeClass(){
       }
 }
 
-/** 
-function changeClass() {
-       
-div[].className='square';
-div[1].className='square';
-div[2].cl1ssName='square';
-div[3].className='square';
-div[4].className='square';
 
-div[5].className='square';
-div[6].className='square';
-div[7].className='square';
-div[8].className='square' ;
+
+const sq = document.querySelectorAll('.square');
+
+
+let c=0;
+for (let i = 0; i < sq.length; i++){
+    sq[i].addEventListener('click',e=>{
+      
+        if (c%2==0){
+
+        
+        e.target.classList.add("X");
+        sq[i].textContent="X";
+        c++;
+          
+        }
+        else{
+  
+   
+        e.target.classList.add("O");
+        sq[i].textContent="O";
+        c++;
+}
+    
+}
+    
+
+
+
+
+)
+
 
 }
-*/
+
+console.log(sq);
+
 });
