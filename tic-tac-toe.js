@@ -55,6 +55,15 @@ for (let i = 0; i < sq.length; i++){
 
 }
 
-console.log(sq);
+sq.forEach(function(elem) {
+    elem.addEventListener('mouseover', function(e) {
+      e.target.classList.add('hover');
+    });
+    
+    elem.addEventListener('mouseout', function(e) {
+      e.target.classList.remove('hover');
+    });
+  });
+  
 
 });
