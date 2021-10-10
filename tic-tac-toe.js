@@ -31,27 +31,27 @@ for (let i = 0; i < sq.length; i++){
     sq[i].addEventListener('click',e=>{
       
         if (c%2==0){
-            
+            if(e.target.textContent == "") {
 
         
-        e.target.classList.add("X");
-        sq[i].textContent="X";
-        
-        c++;
-        winner();  
+                e.target.classList.add("X");
+                sq[i].textContent="X";
+                
+                c++;
+                winner();  
+            }
         }
         else{
+            if(e.target.textContent == "") {
   
    
-        e.target.classList.add("O");
-        sq[i].textContent="O";
-        c++;
-        winner();
-}
-    
-}
-
-)
+                e.target.classList.add("O");
+                sq[i].textContent="O";
+                c++;
+                winner();
+            }
+        }
+    })
 
 
 }
