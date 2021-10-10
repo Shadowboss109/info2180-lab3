@@ -1,8 +1,10 @@
 
 
 window.addEventListener('load', (event) => {
-    // Insert code here 
-   
+
+
+    
+//Class square to div
 let board= document.getElementById('board'); 
 console.log(board);
 let div= board.childNodes;
@@ -18,7 +20,7 @@ function changeClass(){
       }
 }
 
-
+//X and O in places
 
 const sq = document.querySelectorAll('.square');//Array for all the div with class square
 
@@ -29,13 +31,14 @@ for (let i = 0; i < sq.length; i++){
     sq[i].addEventListener('click',e=>{
       
         if (c%2==0){
+            
 
         
         e.target.classList.add("X");
         sq[i].textContent="X";
-        winner();
+        
         c++;
-          
+        winner();  
         }
         else{
   
@@ -47,15 +50,12 @@ for (let i = 0; i < sq.length; i++){
 }
     
 }
-    
-
-
-
 
 )
 
 
 }
+//Hover
 
 sq.forEach(function(elem) {
     elem.addEventListener('mouseover', function(e) {
@@ -70,7 +70,7 @@ sq.forEach(function(elem) {
   console.log(sq);
   
 
-
+//Winner
   const winner_combination = [
     [0, 1, 2],
     [3, 4, 5],
@@ -136,6 +136,25 @@ function winner(){
     
 
 }
+
+//Reset
+const btn = document.querySelector('.btn');
+console.log(btn);
+btn.addEventListener("click",function reset(){
+    document.getElementById('status').textContent='Move your mouse over a square and click to play an X or an O.';
+    document.getElementById('status').classList.remove("you-won");
+    sq.forEach((r)=>{
+        r.classList.remove("X");
+        r.classList.remove("O");
+        r.textContent = ""; 
+    } 
+    )          
+
+
+
+
+    }
+    );
 
 
 });
